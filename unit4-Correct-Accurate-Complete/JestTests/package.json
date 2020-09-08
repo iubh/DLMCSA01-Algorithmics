@@ -1,0 +1,15 @@
+{
+  "name": "unit4-advanced-Algorithmics-JestTests",
+  "version": "0.0.1",
+  "description": "The set of scripts of Algorithmics' unit 4's section about tests",
+  "main": "",
+  "dependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "IUBH",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}

@@ -1,0 +1,18 @@
+let b = Bernoulli({p: 0.5})
+
+let binaryRandomSample = function(){
+    return (sample(b)? 1 : 0)
+};
+
+let random10binaries = function(){
+    return repeat(10,binaryRandomSample)
+};
+
+let a = random10binaries()
+
+let ms1 = '\nDrawn random sample of ten 0 or 1 values : ' + a
+let ms2 = '\nNumber of drawn ones : ' + sum(a)
+
+let ms3 = ms1 + ms2
+
+ms3

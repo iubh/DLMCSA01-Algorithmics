@@ -1,0 +1,5 @@
+console.log("\n ---- Geometric ------");
+let geomF = function (p) {flip(p) ? 0 : 1 + geomF(p);};
+let randomG = function() {return geomF(0.1)};
+
+repeat(10, randomG);

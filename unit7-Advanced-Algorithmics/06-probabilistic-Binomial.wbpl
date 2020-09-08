@@ -1,0 +1,7 @@
+console.log("\n ---- Binomial ------");
+let b0To10 = Binomial({p: 0.5, n:10})
+let randomSampleB0To10 = function(){return sample(b0To10)};
+let randomSampleOf7ValuesB0To10 = function() {
+    return repeat(7,randomSampleB0To10)
+};
+randomSampleOf7ValuesB0To10();

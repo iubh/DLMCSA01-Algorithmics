@@ -1,0 +1,10 @@
+console.log("\n ---- Uniform ------");
+let du = RandomInteger({n:50})
+let cu = Uniform({a:-3, b:1})
+let rUDSf = function() {return sample(du)};
+let rCDSf = function() {return sample(cu)};
+let mess1 = 'Randomly chosen integer below fifty : '
+let mess2 = '\nAnd randomly chosen real from -3 to one : '
+let mess3 = mess1 + rUDSf() + mess2 + rCDSf()
+
+mess3

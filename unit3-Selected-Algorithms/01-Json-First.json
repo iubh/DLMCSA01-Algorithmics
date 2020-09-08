@@ -1,0 +1,10 @@
+{
+  "RespId":["0028","50706","0109"],
+  "ContId":["ZA","AF","EU"],
+  "Gender":["m","Fe","bfm"],
+  "Issues":
+  {
+    "Voting":["2O","1000","19"],
+    "Internet":["free","paid","paid"]
+  }
+}

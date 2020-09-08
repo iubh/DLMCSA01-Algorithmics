@@ -1,0 +1,14 @@
+let du = RandomInteger({n:50})
+let rUDSf = function() {
+    return (flip(.5) ? sample(du) : ((-1)*sample(du)))
+};
+let rAr10 = function() {return repeat(10,rUDSf)};
+let a = rAr10()
+
+let ms1 = '\nDrawn random sample of ten values : ' + a
+let ms2 = '\nMean value of the sample : ' + listMean(a)
+let ms3 = '\nVariance of the sample : ' + listVar(a)
+let ms4 = '\nStandard deviation of the sample : ' + listStdev(a)
+let ms5 = ms1 + ms2 + ms3 + ms4
+
+ms5

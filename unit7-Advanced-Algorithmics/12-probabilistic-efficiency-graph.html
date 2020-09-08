@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Graphic</title><meta charset="utf-8"/>
+    <script src="node_modules/plotly.js/dist/plotly.js"></script>
+    <script src="pts.js"></script>
+</head>
+<div id="graphDiv"></div>
+<script type="module">
+    let x = [], y = [];
+    console.log("pts has " + pts.length + " entries.");
+    pts.forEach(e => { x.push(e[0]); y.push(e[1]); });
+    Plotly.newPlot('graphDiv', [{x: x, y: y, type: 'line'}],
+        {title : "Search through a uniformly distributed dataset",
+         xaxis: {title:"size of sample"},
+         yaxis: {title:"execution time", range:[0,5]}} );
+</script>
+</html>

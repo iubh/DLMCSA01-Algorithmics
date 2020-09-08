@@ -1,0 +1,10 @@
+{
+  "RespId":["0000","07","109"],
+  "ContId":["AF","ASIA","EU"],
+  "Gender":["not known","u","Male"],
+  "Issues":
+  {
+    "Voting":["16 age", "180", "teen"],
+    "Internet":["free", "paid service", "paid"]
+  }
+}

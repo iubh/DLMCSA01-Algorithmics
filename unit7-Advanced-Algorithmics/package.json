@@ -1,0 +1,16 @@
+{
+  "name": "unit7-advanced-Algorithmics",
+  "version": "0.0.1",
+  "description": "The set of scripts of Algorithmics' unit 7",
+  "main": "",
+  "dependencies": {
+    "plotly.js": "^1.55.1",
+    "webppl": "^0.9.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "IUBH",
+  "license": "ISC"
+}

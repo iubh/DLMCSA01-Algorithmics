@@ -1,0 +1,9 @@
+let attempts = 200; let successes = 115;
+let nullHypM = Binomial({p: 0.5, n: attempts})
+let altHypM = Infer({method: "forward", samples: 100000},
+    function(){let p = uniform(0, 1);return binomial(p, attempts)}
+)
+let nullHypBEF = Math.exp(nullHypM.score(successes))
+let altHypBEF = Math.exp(altHypM.score(successes))
+let bayesFactor_01 = "Bayes Factor : " + (nullHypBEF / altHypBEF)
+bayesFactor_01

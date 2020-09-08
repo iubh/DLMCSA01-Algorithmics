@@ -1,0 +1,63 @@
+let udp = RandomInteger({n:100});
+
+let udp1s = function() {
+    return (sample(udp))
+};
+
+let udpns = function() {
+    return repeat(argv.n,udp1s)
+};
+
+let stepsToFind1stPassF = function(a){
+    if(a.length===0){return(0)}
+    if(a.length>0){
+        if (a[0]>=50){return(1)}
+        else {
+            if (stepsToFind1stPassF(a.slice(1))===0){return(0)}
+            else {return(1+stepsToFind1stPassF(a.slice(1)))}
+        }
+    }
+};
+
+let randomSearchRun = function(){
+    let a = udpns();
+    if(argv.mode === 'ad'){
+        if(stepsToFind1stPassF(a)===0){
+            return ([a.toString(),1+a.length]);
+        }
+        else {return ([a.toString(),stepsToFind1stPassF(a)]);}
+    }
+    if((argv.mode === 'mr') ||(argv.mode === 'mn')){
+        if(stepsToFind1stPassF(a)===0) {return (1+a.length);}
+        else {return (stepsToFind1stPassF(a));}
+    }
+};
+
+let cRandomSearchRuns = function(c){
+    let steps21stPass = function() { randomSearchRun();}
+    if(argv.mode === 'ad'){return (repeat(c,steps21stPass))}
+    if(argv.mode === 'mr'){
+        return [c, listMean(repeat(c,steps21stPass))]
+    }
+    if(argv.mode === 'mn'){
+        return [c, Math.round(listMean(repeat(c,steps21stPass)))]
+    }
+};
+
+let emptyArray = function(){return([])}
+
+let builtArray = function(n,nmax){
+    if (n===nmax){return(emptyArray().concat([n]))}
+    else{
+        return((emptyArray().concat([n])).concat(builtArray(n+10,nmax)))
+    }
+}
+
+let randomSearchRunsOnMoreAndMore = function(){
+    if(argv.mode === 'ad'){return(cRandomSearchRuns(argv.n))}
+    if((argv.mode === 'mr') ||(argv.mode === 'mn')){
+        map(cRandomSearchRuns,builtArray(10,200))
+    }
+}
+
+randomSearchRunsOnMoreAndMore();
