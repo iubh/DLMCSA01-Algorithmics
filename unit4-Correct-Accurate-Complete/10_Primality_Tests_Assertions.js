@@ -23,3 +23,4 @@ while (true){
     let ns = readline.question("\nA whole number please: ");
     let pri = isPrime(ns);
     console.log(ns + ' is prime: ' + pri);
+}
