@@ -1,5 +1,5 @@
 let readline = require('readline-sync');
-
+//Function to get the numbers
 let captureNumbers = function (n1,nbs){
     let i=0;
     while(i < n1){
